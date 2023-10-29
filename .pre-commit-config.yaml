@@ -1,0 +1,28 @@
+# run `pre-commit autoupdate` before use this
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/psf/black
+    rev: 23.10.1
+    hooks:
+    -   id: black
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+    - id: isort
+      name: isort
+-   repo: https://github.com/pycqa/flake8
+    rev: '6.1.0'
+    hooks:
+    -   id: flake8
+- repo: local
+  hooks:
+    - id: mypy-local
+      name: mypy(local)
+      entry: mypy
+      language: system
+      types: [python]
